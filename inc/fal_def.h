@@ -47,7 +47,7 @@
 #endif
 
 #ifndef FAL_DEBUG
-#define FAL_DEBUG                      1
+#define FAL_DEBUG                      0
 #endif
 
 #if FAL_DEBUG
