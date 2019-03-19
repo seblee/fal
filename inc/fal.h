@@ -24,7 +24,7 @@
 
 #ifndef _FAL_H_
 #define _FAL_H_
-
+#include <rtthread.h>
 #include <rtconfig.h>
 #include <fal_cfg.h>
 #include "fal_def.h"
