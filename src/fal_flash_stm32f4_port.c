@@ -186,7 +186,8 @@ static int erase(long offset, size_t size)
                     FLASH_FLAG_PGAERR | FLASH_FLAG_PGPERR | FLASH_FLAG_PGSERR);
     /* it will stop when erased size is greater than setting size */
     while (erased_size < size)
-    {
+    { 
+        IWDG_ReloadCounter();
         cur_erase_sector = stm32_get_sector(addr + erased_size);
         flash_status = FLASH_EraseSector(cur_erase_sector, VoltageRange_3);
         if (flash_status != FLASH_COMPLETE)
