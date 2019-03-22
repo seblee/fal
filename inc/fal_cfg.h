@@ -43,8 +43,8 @@ extern const struct fal_flash_dev stm32f4_onchip_flash;
 {                                                                              \
     {FAL_PART_MAGIC_WROD,        "bl", "stm32_onchip",        0,  48*1024, 0}, \
     {FAL_PART_MAGIC_WROD, "parameter", "stm32_onchip",  48*1024,  16*1024, 0}, \
-    {FAL_PART_MAGIC_WROD,       "app", "stm32_onchip",  64*1024, 576*1024, 0}, \
-    {FAL_PART_MAGIC_WROD,  "download", "stm32_onchip", 640*1024, 384*1024, 0}, \
+    {FAL_PART_MAGIC_WROD,       "app", "stm32_onchip",  64*1024, 448*1024, 0}, \
+    {FAL_PART_MAGIC_WROD,  "download", "stm32_onchip", 512*1024, 512*1024, 0}, \
 }
 #endif /* FAL_PART_HAS_TABLE_CFG */
 
