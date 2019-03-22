@@ -64,7 +64,7 @@ __exit:
 
     return result;
 }
-INIT_APP_EXPORT(fal_init);
+//INIT_APP_EXPORT(fal_init);
 
 /**
  * Check if the FAL is initialized successfully
