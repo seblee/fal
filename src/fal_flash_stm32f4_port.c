@@ -157,7 +157,20 @@ static int write(long offset, const uint8_t *buf, size_t size)
     FLASH_ClearFlag(
             FLASH_FLAG_EOP | FLASH_FLAG_OPERR | FLASH_FLAG_WRPERR | FLASH_FLAG_PGAERR | FLASH_FLAG_PGPERR
                     | FLASH_FLAG_PGSERR);
-    for (i = 0; i < size; i++, buf++, addr++)
+    for (i = 0; i < size/2; i++)
+    {
+        /* write data */
+        FLASH_ProgramHalfWord(addr, *(uint16_t *)buf);
+        read_data = *(uint16_t *) addr; 
+        /* check data */
+        if (read_data != *(uint16_t *)buf)
+        {
+            return -1;
+        }
+        buf+=2, addr+=2;
+    }
+    
+    for (i = 0; i < size%2; i++, buf++, addr++)
     {
         /* write data */
         FLASH_ProgramByte(addr, *buf);
