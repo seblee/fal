@@ -42,7 +42,8 @@ int fal_init(void)
     /* initialize all flash device on FAL flash table */
     result = fal_flash_init();
 
-    if (result < 0) {
+    if (result < 0)
+    {
         goto __exit;
     }
 
@@ -56,10 +57,10 @@ __exit:
         init_ok = 1;
         log_i("RT-Thread Flash Abstraction Layer (V%s) initialize success.", FAL_SW_VERSION);
     }
-    else if(result <= 0)
+    else if (result <= 0)
     {
         init_ok = 0;
-        log_e("RT-Thread Flash Abstraction Layer (V%s) initialize failed.", FAL_SW_VERSION);
+        // log_e("RT-Thread Flash Abstraction Layer (V%s) initialize failed.\r\n", FAL_SW_VERSION);
     }
 
     return result;
